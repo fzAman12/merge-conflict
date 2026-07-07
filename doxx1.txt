@@ -1,0 +1,17 @@
+import { test } from '@playwright/test';
+
+test('Print Table Value', async ({ page }) => {
+
+    await page.goto("https://only-testing-blog.blogspot.com/2013/09/test.html");
+
+    const value = page.locator("//*[@id='post-body-6522850981930750493']/div[1]/table/tbody/tr[1]/td[1]");
+
+    const text = await value.textContent();
+    // console.log('//*[@id='post-body-6522850981930750493']/div[1]/table/tbody/tr[1]/td');
+    console.log("//*[@id='post-body-6522850981930750493']/div[1]/table/tbody/tr[1]/td[1]");
+
+    console.log(text);
+
+    await page.pause();
+
+});
